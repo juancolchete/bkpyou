@@ -1,6 +1,3 @@
-COMMAND="your_command"
-
-# Iterate over each file in the directory
 for file in $PWD/envs/{*,.*}
 do
     if [ -f "$file" ]; then
