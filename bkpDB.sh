@@ -3,6 +3,7 @@ total_files=$(find "./envs" -type f | wc -l)
 echo "Total files $total_files"
 for file in $PWD/envs/{*,.*}
 do
+    echo "Start $file"
     if [ -f "$file" ]; then
       ((i++))
       source $file
