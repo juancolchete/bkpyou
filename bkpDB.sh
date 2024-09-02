@@ -15,7 +15,7 @@ do
         printf '%s is strictly larger than 1 MB\n' "$filepath"
         mv ./bkp/$DB_NAME/$timestamp-temp.sql ./bkp/$DB_NAME/$timestamp-$DB_NAME.sql
       else
-        print 'trouble on bkp'
+        echo "trouble on bkp"
       fi
       echo "($i/$total_files) ended bkp $DB_NAME"
     fi
