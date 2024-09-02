@@ -1,5 +1,6 @@
 i=0
 total_files=$(find "./envs" -type f | wc -l)
+echo "Total files $total_files"
 for file in $PWD/envs/{*,.*}
 do
     if [ -f "$file" ]; then
