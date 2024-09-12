@@ -11,7 +11,7 @@ do
       mkdir -p ./bkp/$DB_NAME
       timestamp=$(date +%s)
       if [[ $DB_KIND == "postgres" ]]; then
-        PGPASSWORD=$DB_PASS pg_dump -h $DB_HOST > ./bkp/$DB_NAME/temp.sql
+        PGPASSWORD=$DB_PASS pg_dump -u $DB_NAME -h $DB_HOST > ./bkp/$DB_NAME/temp.sql
       else
         mysqldump --ssl-verify-server-cert=0 -u $DB_USER -p$DB_PASS -P $PORT -h $DB_HOST $DB_NAME > ./bkp/$DB_NAME/temp.sql
       fi
