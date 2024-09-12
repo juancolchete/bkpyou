@@ -12,7 +12,7 @@ do
       timestamp=$(date +%s)
       touch ./bkp/$DB_NAME/temp.sql
       if [[ $DB_KIND == "postgres" ]]; then
-        PGPASSWORD=$DB_PASS pg_dump -U $DB_USER -h $DB_HOST > ./bkp/$DB_NAME/temp.sql
+        PGPASSWORD=$DB_PASS pg_dump -U $DB_USER -h $DB_HOST -d $DB_NAME > ./bkp/$DB_NAME/temp.sql
       else
         mysqldump --ssl-verify-server-cert=0 -u $DB_USER -p$DB_PASS -P $PORT -h $DB_HOST $DB_NAME > ./bkp/$DB_NAME/temp.sql
       fi
