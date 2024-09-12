@@ -16,7 +16,7 @@ do
       else
         mysqldump --ssl-verify-server-cert=0 -u $DB_USER -p$DB_PASS -P $PORT -h $DB_HOST $DB_NAME > ./bkp/$DB_NAME/temp.sql
       fi
-      if [ -n "$(find "./bkp/$DB_NAME/temp.sql" -prune -size +10000c)" ]; then
+      if [ -n "$(find "./bkp/$DB_NAME/temp.sql" -prune -size +100000c)" ]; then
         mv ./bkp/$DB_NAME/temp.sql ./bkp/$DB_NAME/$timestamp-$DB_NAME.sql
       else
         echo "trouble on bkp"
