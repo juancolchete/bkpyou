@@ -10,6 +10,7 @@ do
       echo "($i/$total_files) start bkp $DB_NAME"
       mkdir -p ./bkp/$DB_NAME
       timestamp=$(date +%s)
+      touch ./bkp/$DB_NAME/temp.sql
       if [[ $DB_KIND == "postgres" ]]; then
         PGPASSWORD=$DB_PASS pg_dump -U $DB_USER -h $DB_HOST > ./bkp/$DB_NAME/temp.sql
       else
