@@ -1,4 +1,6 @@
 # bkpyou
+Solution to do BKP in MySQL and postgres databases.
+
 To use create a folder called envs
 ```bash
 mkdir envs
